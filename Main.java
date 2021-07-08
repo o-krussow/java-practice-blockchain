@@ -20,7 +20,7 @@ public class Main {
 		//difficulty++
 		System.out.println("Time in MS for Difficulty: "+(timeNow-lastBlockTime));
 
-		if (timeNow - lastBlockTime < 5000) {
+		if (timeNow - lastBlockTime < 1000) {
 			difficulty++;
 		}
 		else if (difficulty > 1) {
