@@ -19,14 +19,18 @@ public class Main {
 		//if block.timestamp - block.lasttimestamp < 5000 milliseconds
 		//difficulty++
 		System.out.println("Time in MS for Difficulty: "+(timeNow-lastBlockTime));
-
-		if (timeNow - lastBlockTime < 1000) {
-			difficulty++;
+		if (lastBlockTime != -1) {
+			if (timeNow - lastBlockTime < 1000) {
+				difficulty++;
+			}
+			else if (difficulty > 1) {
+				difficulty--;
+			}
 		}
-		else if (difficulty > 1) {
-			difficulty--;
+		else {
+			difficulty = 1;
+			lastBlockTime = new Date().getTime();
 		}
-
 	}
 
 	public static String multString(String string, int times) {
@@ -42,7 +46,7 @@ public class Main {
 		BlockChain blockChain = new BlockChain();
 		String guessHash = StringUtil.Sha256("o");
 		int i = 0;
-		long lastBlockTime = new Date().getTime();
+		long lastBlockTime = -1;
 
 		//"MINING"
 		while (true) {
