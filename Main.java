@@ -29,7 +29,6 @@ public class Main {
 		}
 		else {
 			difficulty = 1;
-			lastBlockTime = new Date().getTime();
 		}
 	}
 
