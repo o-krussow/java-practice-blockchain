@@ -1,1 +1,1 @@
-An old attempt at a simple blockchain implementation written in java.
+An old attempt at a simple java blockchain implementation.
